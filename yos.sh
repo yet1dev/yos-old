@@ -1,12 +1,14 @@
 #==========================================
 #               YELLOW OS
 #==========================================
-arg=$1
+arg="$1"
+val1="$2"
+val2="$3"
+
 YOS='/sdcard/0-yos'
 HOST='/data/data/com.termux/files'
 APPS='git openssl openssh micro zellij htop musl-dev sudo rustup'
 #==========================================
-
 SetupCommand(){
 	apk update
 	apk add ${APPS}
@@ -21,6 +23,11 @@ SetupCommand(){
 
 	git config --global user.name  "${NAME}"
 	git config --global user.email "${EMAIL}"
+}
+
+ShowRun(){
+	printf "\e[33;1mRunning: \e[0m${val1}\n"
+	sleep 1; eval "${val1}"
 }
 
 SaveCommand(){
@@ -49,8 +56,9 @@ PromptCommand(){
 #==========================================
 case $arg in
 	run)  proot-distro login alpine --termux-home -- bash;;
+	save) SaveCommand;;
 	setup) SetupCommand;;
 	prompt) PromptCommand;;
-	save) SaveCommand;;
+	show-run) ShowRun;;
 	*)  echo 'Command not implemented yet'
 esac
