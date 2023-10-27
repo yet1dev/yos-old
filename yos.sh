@@ -18,6 +18,7 @@ SaveCommand(){
 #            READ THE INPUT
 #==========================================
 case $arg in
+	run)  proot-distro login alpine --termux-home -- bash;;
 	save) SaveCommand;;
 	*)  echo 'Command not implemented yet'
 esac
