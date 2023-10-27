@@ -11,7 +11,7 @@ Actually it is based on termux and proot-distro
 ```sh
 > yos run
 > yos save
+> yos setup
 > yos prompt
-> yos config
 > yos show-run {wait} {command}
 ```

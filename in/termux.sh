@@ -16,6 +16,6 @@ chmod 777 yos.sh
 mv ./yos.sh ${HOST}/usr/bin/yos
 
 proot-distro install alpine
-proot-distro login alpine -- yos config
+proot-distro login alpine -- yos setup
 
 termux-reload-settings
