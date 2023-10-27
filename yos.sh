@@ -55,7 +55,7 @@ PromptCommand(){
 #            READ THE INPUT
 #==========================================
 case $arg in
-	run)  proot-distro login alpine --termux-home -- bash;;
+	run)  proot-distro login alpine --termux-home -- bash --rcfile .bashrc2;;
 	save) SaveCommand;;
 	setup) SetupCommand;;
 	prompt) PromptCommand;;
